@@ -29,34 +29,34 @@ $$
 개루프 전달 함수는 다음과 같습니다:
 
 $$
-\frac{Y(s)}{R(s)} = \frac{K}{s + 10}
+\frac{Y(s)}{R(s)} = \frac{K}{s + 50}
 $$
 
-여기서 \( R(s) = \frac{1}{s} \) 라고 하면,
+여기서 R(s) = 1/s 라고 하면,
 
 $$
-Y(s) = \frac{K}{s(s + 10)}
+Y(s) = \frac{K}{s(s + 50)}
 $$
 
 부분 분수 전개는 다음과 같습니다:
 
 $$
-Y(s) = K \left( \frac{1}{s} - \frac{1}{s + 10} \right)
+Y(s) = \frac{K}{50} \left( \frac{1}{s} - \frac{1}{s + 50} \right)
 $$
 
 이 식의 역 라플라스 변환은 다음과 같습니다:
 
 $$
-y(t) = \frac{K}{10} \left( 1 - e^{-10t} \right)
+y(t) = \frac{K}{50} \left( 1 - e^{-50t} \right)
 $$
 
-\( t \to \infty \) 일 때, \( y(t) \to \frac{K}{10} \) 이므로, \( y(t) \)가 10에 접근하도록 \( K = 100 \)을 선택합니다. 또한, 최종값 정리를 이용하면 다음을 얻을 수 있습니다:
+t가 무한일 때, y(t)는 K/50 이므로, \( y(t) \)가 1에 접근하도록 K = 50 입니다. 
+또한, 최종값 정리를 이용하면 다음을 얻을 수 있습니다:
 
-$$
-\lim_{t \to \infty} y(t) = \lim_{s \to 0} s Y(s) = \frac{K}{10} = 10
-$$
+$$y(\infty)=\frac{K}{50}(1-e^{\infty})=\frac{K}{50}=1$$
+$$\therefore K=50$$
 
-따라서, \( K = 100 \)을 선택하면 \( y(t) \)는 \( t \to \infty \)일 때 10에 접근합니다.
+답 : K = 50이면, t가 ∞에 가까워질 때 y(t) → 1이 됩니다.
 
 ---
 
@@ -94,20 +94,21 @@ $$
 라플라스 변환을 취한 후, 결과를 행렬 형태로 정리하면 다음과 같습니다:
 
 $$
-\begin{bmatrix}
-M s^2 + b s + k & -(b s + k) \\
+\\begin{bmatrix}
+M s^2 + b s + k & -(b s + k) \\\\
 -(b s + k) & m s^2 + b s + k
-\end{bmatrix}
-\begin{bmatrix}
-X(s) \\
+\\end{bmatrix}
+\\begin{bmatrix}
+X(s) \\\\
 Y(s)
-\end{bmatrix}
+\\end{bmatrix}
 =
-\begin{bmatrix}
-F(s) \\
+\\begin{bmatrix}
+F(s) \\\\
 0
-\end{bmatrix}
+\\end{bmatrix}
 $$
+
 
 여기서 \( Y(s) \)를 구하면 다음을 얻습니다:
 
